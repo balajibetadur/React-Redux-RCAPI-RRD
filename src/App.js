@@ -1,12 +1,14 @@
 import React from 'react'
-import TodoState from './context/todos/TodoState' 
-import Todo from './components/ContextAPI/Todo';
+import TestState from './context/TestState'
+import Child from './components/ContextAPI/Child'
+import Parent from './NewComps/Parent'
 
 function App() {
-    return (
-    <TodoState>
-        <div><Todo/></div>
-    </TodoState>
+
+  return (
+    <TestState>
+      <div><Parent/></div>
+    </TestState>
   )
 }
 

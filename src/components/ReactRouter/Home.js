@@ -1,8 +1,12 @@
 import React from 'react'
+import GrandChild from './GrandChild'
 
 function Home() {
+  
   return (
-    <div>Home</div>
+    <div>Home
+      <GrandChild/>
+    </div>
   )
 }
 

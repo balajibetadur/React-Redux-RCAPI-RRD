@@ -1,0 +1,8 @@
+.menu{
+    display: flex;
+    background-color: grey;
+}
+
+.menu__option{
+    padding: 10px;
+}
