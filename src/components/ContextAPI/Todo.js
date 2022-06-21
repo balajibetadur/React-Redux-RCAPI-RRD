@@ -1,13 +1,19 @@
 import React from 'react'
+import { useEffect } from 'react';
 import { useContext } from 'react'
 import TodoContext from '../../context/todos/TodoContext';
 
 function Todo() {
     
-    const todoList = useContext(TodoContext);
+    const {todoList, addTodo, deleteTodo} = useContext(TodoContext);
+    
+    
     console.log(todoList)
-  return (
-    <div>Todo</div>
+    return (
+        <>
+        <button onClick={() => {addTodo('testing')}}>Add</button>
+        <button onClick={() => {deleteTodo(0)}}>Delete</button>
+        </>
   )
 }
 
