@@ -1,17 +1,45 @@
-export const increment = (count) => {
+export const addTodo = (userText) => {
+        return (dispatch) => {
+            dispatch ({
+                type: 'addTodo',
+                value: userText
+            })
+        }
+    }
+    
+export const deleteTodo = (index) => {
     return (dispatch) => {
         dispatch ({
-            type: 'increment',
-            value: count
+            type: 'deleteTodo',
+            value: index
         })
     }
 }
 
-export const decrement = (count) => {
+export const resetTodo = () => {
     return (dispatch) => {
         dispatch ({
-            type: 'decrement',
-            payload: count
+            type: 'resetTodo',
         })
     }
 }
+    
+
+// export const increment = (count) => {
+//     return (dispatch) => {
+//         dispatch ({
+//             type: 'increment',
+//             value: count
+//         })
+//     }
+// }
+
+
+// export const decrement = (count) => {
+//     return (dispatch) => {
+//         dispatch ({
+//             type: 'decrement',
+//             payload: count
+//         })
+//     }
+// }

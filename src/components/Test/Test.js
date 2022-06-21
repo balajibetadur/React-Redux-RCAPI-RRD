@@ -1,25 +1,30 @@
-import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import React, { useState } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import { actions } from '../../state/actions'
-import { increment } from '../../state/actions/countAction'
-import Test2 from './Test2'
 
 function Test() {
+
    const dispatch =  useDispatch()
   const count = useSelector(state => state.count)
 
-// const [test, setTest] = useState(0)
-// setTest(5)
+const [todo, setTodo] = useState('')
 
+function handleClick(){
+  dispatch(actions.addTodo(todo))
+}
   return (
     <div>
-        <div className="counter">
+    <input type="text" value = {todo} onChange={(event) => {setTodo(event.target.value)}} />
+    <button onClick={handleClick}>Add</button>
+
+
+        {/* <div className="counter">
       <button onClick = {() => {dispatch(actions.decrement(5))}} className='button'>-</button>
       Count: {count}
       <button onClick = {() => {dispatch(actions.increment(10))}} className='button'>+</button>
     
       </div>
-      <Test2/>
+      <Test2/> */}
     </div>
   )
 }
